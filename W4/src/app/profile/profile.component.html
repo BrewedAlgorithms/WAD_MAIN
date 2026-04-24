@@ -1,0 +1,10 @@
+<section class="card">
+  <h3>User Profile</h3>
+  <div *ngIf="userData; else noUser">
+    <p><strong>Username:</strong> {{ userData.name }}</p>
+    <p><strong>Email:</strong> {{ userData.email }}</p>
+  </div>
+  <ng-template #noUser>
+    <p>Please login to view your profile.</p>
+  </ng-template>
+</section>
