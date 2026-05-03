@@ -67,6 +67,8 @@ app.delete("/deleteTask/:id", async (req, res) => {
     res.json({ message: "Task Deleted" });
 });
 
-app.listen(3000, () =>
-    console.log("Server running on http://localhost:3000")
+const PORT = process.env.PORT || 3002;
+
+app.listen(PORT, () =>
+    console.log("Server running on http://localhost:" + PORT)
 );

@@ -1,0 +1,42 @@
+body{
+    font-family: Arial;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.container{
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input{
+    width: 70%;
+    padding: 10px;
+}
+
+button{
+    padding: 10px;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li{
+    background: #eee;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns button{
+    margin-left: 5px;
+}

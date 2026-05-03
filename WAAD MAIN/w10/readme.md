@@ -4,7 +4,7 @@ Frontend sends AJAX request
 ↓
 Express server receives request
 ↓
-MongoDB stores/retrieves data
+Local variable (array) stores/retrieves data
 ↓
 Server sends response
 ↓
