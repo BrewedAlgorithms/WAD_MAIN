@@ -31,9 +31,7 @@ app.post("/register", (req, res) => {
 
   users.push({ name, email, password, mobile, dob, city, address });
 
-  res.status(201).json({
-    message: "Registered",
-  });
+  res.status(201).end();
 });
 
 /* LOGIN */

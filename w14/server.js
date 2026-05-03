@@ -1,26 +1,23 @@
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
-const path = require("path");
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 
-// serve static files (frontend)
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
-// API endpoint
+const usersPath = "users.json";
+
 app.get("/api/users", (req, res) => {
-  fs.readFile("./users.json", "utf8", (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: "Failed to read data" });
-    }
+  try {
+    const data = fs.readFileSync(usersPath, "utf8");
     res.json(JSON.parse(data));
-  });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to read data" });
+  }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+
+app.listen(3000, () => {
+  console.log(`Server running at http://localhost:3000`);
 });
