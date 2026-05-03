@@ -12,5 +12,6 @@
   "dependencies": {
     "express": "^4.22.1"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {}
 }

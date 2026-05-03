@@ -3,7 +3,7 @@ const usernameField = document.getElementById("username");
 const passwordField = document.getElementById("password");
 
 document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault(); 
 
   let username = usernameField.value;
 
