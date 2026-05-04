@@ -1,6 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
-
+const router = require("./routes/bookRoutes");
 const app = express();
 
 // Connect DB
@@ -10,7 +10,7 @@ connectDB();
 app.use(express.json());
 
 // Routes
-app.use("/", require("./routes/bookRoutes"));
+app.use("/", router);
 
 // Start server
 app.listen(3000, () => {
