@@ -10,19 +10,14 @@ app.use("/images", express.static("images"));
 
 // API Route
 app.get("/employees", (req, res) => {
-
-    fs.readFile("employees.json", "utf-8", (err, data) => {
-
-        if (err) {
-            return res.status(500).send("Error reading file");
-        }
-
-        const employees = JSON.parse(data);
-
-        res.json(employees);
-    });
+  try {
+    const data = fs.readFileSync("employees.json", "utf8");
+    res.json(JSON.parse(data));
+  } catch (error) {
+    res.status(500).send("Error reading file");
+  }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
