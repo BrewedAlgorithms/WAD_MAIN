@@ -1,0 +1,129 @@
+Here’s a **clean, direct, no-fluff guide** you can copy into `guide.txt` and follow to build the app in Salesforce.
+
+---
+
+# 📄 Student Management System – Salesforce (Step-by-Step)
+
+## 1. Open Setup
+
+* Click ⚙️ → **Setup**
+
+---
+
+## 2. Create Objects
+
+### 2.1 Student Object
+
+* Setup → **Object Manager → Create → Custom Object**
+* Label: `Student` → Save
+
+**Add Fields:**
+
+* Roll Number → Number (5,0)
+* Email → Email
+* Phone → Phone
+
+---
+
+### 2.2 Course Object
+
+* Object Manager → Create → Custom Object
+* Label: `Course` → Save
+
+**Add Fields:**
+
+* Course Name → Text (50)
+* Duration → Number
+* Faculty Name → Text (50)
+
+---
+
+### 2.3 Enrollment Object
+
+* Object Manager → Create → Custom Object
+* Label: `Enrollment` → Save
+
+**Add Fields:**
+
+* Enrollment Date → Date
+* Status → Picklist (Present, Absent)
+
+---
+
+## 3. Create Relationships (IMPORTANT)
+
+### In Enrollment:
+
+* Fields & Relationships → New
+* Lookup Relationship → **Student** → Save
+* Lookup Relationship → **Course** → Save
+
+---
+
+## 4. Create Tabs
+
+* Setup → Search **Tabs**
+* Under Custom Object Tabs → New
+
+Create:
+
+* Student Tab
+* Course Tab
+* Enrollment Tab
+
+---
+
+## 5. Create App
+
+* Setup → **App Manager → New Lightning App**
+
+Fill:
+
+* Name: `Student Management System`
+
+Click Next until **Navigation Items**
+
+Add:
+
+* Student
+* Course
+* Enrollment
+
+Select Profile:
+
+* System Administrator
+
+→ Save
+
+---
+
+## 6. Open App
+
+* Click 🔲 App Launcher
+* Search: `Student Management System`
+* Open
+
+---
+
+## 7. Add Data (Test)
+
+### Add Student
+
+* Student → New
+* Name, Roll No, Email → Save
+
+### Add Course
+
+* Course → New
+* Course Name, Duration → Save
+
+### Add Enrollment
+
+* Enrollment → New
+* Select Student + Course
+* Date, Status → Save
+
+---
+---
+
+If you follow this exactly, your app **will work 100%**.
