@@ -13,8 +13,9 @@
 
 
             <div class="form-floating my-3">
-                <input type="text" placeholder="Name" class="form-control" title="Enter valid name" data-bs-toggle="tooltip">
+                <input type="text" placeholder="Name" class="form-control" required title="Enter valid name" data-bs-toggle="tooltip">
                 <label for="">Name</label>
+                <div class="invalid-feedback">enterrrrr</div>
             </div>
 
             <div class="form-floating my-3">
@@ -37,6 +38,8 @@
                 <label for="">Country</label>
             </div>
 
+            <button type="submit" class="btn btn-primary">Submit</button>
+
 
 
         </form>
@@ -53,6 +56,19 @@
     const tt = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tt.forEach(
         el => new bootstrap.Tooltip(el)
+    );
+    const nv = document.querySelectorAll('.needs-validation');
+    nv.forEach(
+        form => {
+            form.addEventListener('submit', e => {
+
+                if(!form.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            form.classList.add("was-validated");
+            })
+        }
     );
 </script>
 </footer>
